@@ -1,0 +1,40 @@
+
+Basic Functions
+
+Functions:
+String methods: at(), charAt(), toLowerCase, toUpperCase, slice(), indexOf(),
+Math methods: min (), max () , abs(),
+Number methods: toFixed(), toPrecision ()
+
+What is a fucntion/ method?
+-These are components that could execute a task whenever used.
+-They are reusable and could be used whenever needed. 
+
+Programmin languages provides us thousands of pre-built methods/ Functions
+to use in our applications/programs. 
+
+however, you may need more functions and you can create your custom functions
+in case the language does not provide it 
+
+// Start the meeting
+// create a file
+// start coding
+
+every function must start with  NAME
+SYNTAX:
+function name() {
+    // reusable coding statements 
+}
+
+    How to execute the block of function?
+    To be able to execute the block of function, you need to invoke/ call the function
+    with its name. 
+
+FALSY values : empty string, null, false, 0, undefined, NaN
+which means falsy values will evaluate to 0 when converting to numbers
+TRUTHY values : true, not empty strings, any number but not zero 
+which means these are evaluated to 1 when converting to numbers 
+
+{} known as code block 
+
+Hoisitng: This is 

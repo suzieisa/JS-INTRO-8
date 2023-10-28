@@ -1,0 +1,57 @@
+RECAP:
+
+Output statements: console.log()
+Escape sequences: special characters that allow us to insert new lines to our texts
+\'
+\"
+\n 
+\t
+
+Variables:
+var: used to be the only way to store info (2015)
+const: cannot be reassigned and must be initialized with a values
+let: can be declared, initialized, and reassigned
+
+NOTE: trying to reasssign a value to const varaible will cause a type error
+NOTE: const variable cannot be declared, so whenever you use const you have ot be given an initial value
+
+const name: // compile error- syntax error
+const name " 'Alex'; this is the proper way to use const
+
+Data Types:
+numbers:
+    whole numbers: 1, 2 , 100
+    deciaml numbers- floating numbers: 99.9 
+
+texts: Alex, Chicago
+
+dates: 11/11/1990
+
+Collection: arrays
+
+texts= strings
+
+
++ operator is used for addition when used between 2 numbers
+it is used for concatenation when used between 2 strings or 1 number and 1 string
+
+2 + 4      = 6
+10 + 23    = 33 
+'abc' + 'xyz' = 'abcxyz'
+
+"a    ' + 'b   ' = 
+
+concatenation is just bringing them together
+
+// boolean
+// it is used to store either true or false or an expression that values true or fals
+
+let isTodaySaturday = true;
+let areStudentInPerson = false;
+let b1 =  5 . 3; // true
+let b2 = 5 * 2 = 10; // true
+let b3 = 10 < 7; // false
+let b4 = 5 >= 5; // true
+
+console.log(b1);
+console.log(b2);

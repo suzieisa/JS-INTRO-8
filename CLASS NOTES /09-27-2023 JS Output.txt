@@ -1,0 +1,77 @@
+RECAP:
+
+Computer is a device or machine that takes input and gives output
+composed of hardware and software
+
+computer language is known as BINARY (COMPOSED OF 0 AND 1)
+ZER0=OFF
+ONE=ON
+
+ASCII-taboe that converts letters to 0 or 1 by using deciaml system
+
+code = source code= a piece of code used by a program language
+
+program language is example JAVA, JAVASCRIPT , C, Linux
+These languages help enable us to communicate with computer 
+These all help to build anything on computer to help build softwares (MAC IOS ETC
+ source code = console.log("HELLO WORLD"); JAVA SCRIPT
+
+ Natural languages are english ETC uses grammar
+ binary language uses grammer known as syntax 
+
+ syntax: grammar rules in binary language or porgramming language
+
+ console log basically means "log this info in my console"
+
+ Syntax rules are written rules and MUST be followed
+ Coding conventions are standards or common rules that every programmer follows
+ even though they are not part of syntax rules
+ Java script allows both single or double quotes
+ if you start with one always use one not different 
+
+ EXECUTE MEANS RUN IN OTHER WORDS RUN YOUR CODE mean same thing
+
+ every line of code is known as a STATEMENT
+ Every statement is ended with semicolon ; 
+ THIS IS A RULE BUT STILL WORK WITH OUT SEMICOLON BUT NOT PREFERRED (COVENTIONAL RULE 
+ TO USE A SEMICOLON AT THE ended)
+
+ / forward slash
+ \ backward slash
+ () opening and closing parantheses
+ {} opening and closing curly faces
+ [] opening and closing square brackets
+ ; semicolon
+ :colon
+ . period
+ , coma 
+ # pound or hashtag
+ $ money sign 
+ < less than
+ > greater than
+ = equal
+ == not strict equality
+ === strict equality
+ ! not or exclamation mark
+ ! not equal
+ | pike or
+ ^ carrot
+ ~ tilda
+
+
+note: JS executes 
+
+var vs let vs const 
+vas: is old
+let: can be reassigned
+const: cannot be reassigned
+
+VARIABLE SYNTAX:
+
+var/ let /const = value
+
+variable names can start with letter, digits (0-9) and only money characters and underscore
+
+compilor-time error = syntax error
+    you will see these errors right away without running the code
+    these are completely human mistakes like spelling etc

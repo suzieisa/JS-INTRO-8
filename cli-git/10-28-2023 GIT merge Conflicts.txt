@@ -1,0 +1,55 @@
+CLI commands: Linux commands that we use to run some tasks on our machine using Temrinal(mac) command prompt(windows)
+
+cd, ls, pwd, mkdir, touch, echo
+
+GIT: Global information tracker:  version control system that is used to track changes for a folder/ project
+it enables programmers/team members to collaborate with their changes
+
+GitHub: hosting website that you can see your chnages, add collaboraters, creat pull requests and more
+
+
+Pull request or merge request: merging new changes in a local branch and push these changes to Remote, 
+it goes to remote branch, but not main or master.
+Then you request your changes to be merged to main/master, this is called pull request or merge request.
+
+pull: this is used to pull the changes to your local branch from remote using git pull.
+REMOTE to LOCAL and from same remote branch to local branch 
+
+
+GIT BRANCHING
+git branch -- used to see the list of existing branches and the one that you are currently on
+git branch {name} -- used to create a new branch
+git checkout {name} -- used to switch branch to given branch
+git checkout -b {branchname} -- to combine the branch and checkout step together 
+git branch -d {name} -- delete the branch 
+
+MERGE CONFLICTS 
+- This happens only if two or more collaboraters are modifiying the same file and one
+of them is trying to pull request to master without PULLING THE LAST CHANGES.
+
+1. Dylan already made changes on dylan.js and merged them to master 
+2. Akin did not pull these changes and he created his own branch off of master 
+and started to make changes on the same file.
+3. Akin also push the cnaged with local branch and requested a pull request and thethe conflict hapens!!!
+
+HOW TO RESOLVE:
+1. If the conflict is small and can be resolved quickly then resolve on the hosting website
+and complete the pull request
+
+2. Sometimes conflict it is more complex and you need to resolve in the local
+    2a. First get back to your local
+    2b. Swithc the branch to master
+    2c. Pull the changes with 'git pull' to master 
+    2d. switch back to your local branch that caused the CONFLICTS
+    2e. Merge master into your local branch usin 'git merge master'
+    2f. Resolve all the conflicts on your editor
+    2g. track new chnages, commit them again, and push
+    2h. Go back to your pull request page, you will see all the conflicts resolved
+    and complete the pull request.
+
+
+How to merge one local branch into another local branch?
+1. First make sure you are on correct branch to merge another branch into
+2. Run "git merge {branchName} command to merge changes from specific branch to yours
+
+Assume that you are branch called as US123-Login-Task and you want to merge changes 

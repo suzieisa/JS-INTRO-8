@@ -1,0 +1,138 @@
+JS if else: it works around a condiotion which is either true or false
+-only one block will be executed from the statements 
+
+{} == represents block
+
+{
+    //block of code
+}
+i
+
+f(boolen_condition) {// boolen, ecpression, truthy or falsy values 
+    // the code that you put here will be executed if the condition is true
+}
+else{
+    //otherwise will execute this if the condition is false
+}
+
+if(true)
+if (3===3)
+if(10 % 2 === 0)
+if (3 * 5 % 15 === 0)
+
+if('Hello')
+if(null)
+
+let isCoffee = true;
+
+if (isCoffee) {
+    // a cup of coffee
+}
+else {
+    // cup of tea 
+}
+
+let isCoffee = false;
+let isTea = true;
+
+if(isCoffee) {
+    // a cupf of coffee
+}
+else (ifTea) {
+    // a cup of tea
+}
+else {
+    // a cup of water
+}
+
+Nested if else conditions: if one condition is completely dependent on another condition
+ 
+        coffee 
+with cream      without cream 
+
+         tea
+    with sugar      without sugar
+
+let isCoffee = false;
+let isTea = false;
+let isCream = true;
+let isSugar = false;
+
+
+if(isCoffee) {
+    // a cup of coffee
+    if(isCream) {
+        // add cream 
+
+        if(isSunday) {
+            // add 3 
+        }
+        else {
+            // add 1
+        }
+    
+}
+else if(isTea) {
+    // a cup of tea
+    if(isSugar) {
+        // add sugar
+    }
+}
+else {
+    // a cup of water
+}
+
+
+see this a lot with username and password
+
+if(validUsername) {
+    // ask password
+    if (validPassword){
+        // log user in
+    }
+}
+else {
+    // problem 
+    // we cannot find this account 
+}
+
+if(validUsername && validPassword) {
+    // you are logged in
+}
+
+else if (!validUsername) {
+    // invalid username enetered!
+}
+
+else if (!validPassword) {
+    // invalid password entered!
+}
+else {
+
+}
+
+short- if else
+THE ABOVE if-else statements could be shortened. You can do this only if there is one block of code
+if(english_exam_score )
+
+Find max number between 2 numbers
+let num1 = 20, num2 = 10;
+
+let max;
+
+if(num1 > num2) {
+    max = num1;
+}
+else {
+    max = num2;
+}
+
+we can simplify if else using turnary operator
+let max2 = num1 > num2 ? num1 : num2 ;
+
+different ways to check if a name starts with 'j' ignoring cases
+name.toUpperCase()[0] === 'J' 
+name.toLowerCase()[0] === 'j'
+name.startsWith('J') || name.startsWith('j')
+
+// Ternary solution
