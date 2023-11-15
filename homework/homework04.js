@@ -1,7 +1,7 @@
 /* TASK 1 Write a program that outputs all the numbers that are divisible by 7 starting from 1 to 100 
 (both inclusive). */
-
-for (let i = 1; i <= 100; i ++) {
+// if you know how many times you want of something you do a FOR LOOP
+for (let i = 1; i <= 100; i++) {
     if (i % 7 === 0) console.log(i);
 }
  
@@ -11,27 +11,28 @@ for (let i = 1; i <= 50; i ++) {
 }
 
 // TASK 3 Write a program that outputs all the numbers that are divisible by 5 starting from 100 to 50 (both inclusive).
-for (let i = 100; i >=50; i--) {
+for (let i = 100; i >= 50; i--) {
     if (i % 5 === 0) console.log(i);
 }
 
 // TASK 4 Write a program that outputs the squares of all numbers starting from 0 to 7 (both inclusive).
 for (let i = 0; i <= 7; i ++) {
-    console.log(i ** 2);
+    console.log(i * i);
 }
 
 // TASK 5 Write a program that finds sum of the numbers starting from 1 to 10 (both inclusive).
 let sum = 0;
 
 for (i = 1; i <= 10; i ++) {
-    sum += i 
+    sum += i // this means to add sum + i 
 } 
 console.log(sum); 
 
 /* TASK 6 Write a program generates a random number between 1 and 10 (both inclusive).
-And find the factorial of the number. */
+And find the factorial of the number. 
+factorial is for example 5 * 4 * 3 * 2 * 1 */
 
-let factorial = 1;
+let factorial = 1;      // you have to set this to 1 because if you start with 0 any number multiplied by 0 will stay 0
 let rand1 = Math.floor(Math.random() * 10) + 1;
 console.log(rand1);
 
@@ -46,18 +47,20 @@ Keep generating a new number till you get a number that is divisible by 5.
 The program should also count how many attempts it takes to generate such a number.
 
 Eventually, print the random number divisible by 5 with the number of attempts as below.
+FOR THIS PROBLEM WE DO NOT KNOW HOW MANY TIMES IT WILL TAKE SO THATS WHY A FOR LOOP WONT WORK
+WHILE LOOPS ARE USED WHEN YOU DONT KNOW THE EXACT # OF ITERATIONS 
 */
+
 let attempts = 0;
-let isDone = false;
-let randNum;
+let randNum; // YOU JUST INITALIZE AND DONT ASSIGN IT TO ANYTHING BC IT WILL BE ASSIGNED INSIDE THE LOOP
 
 
-while (!isDone) {
-    randNum = Math.floor(Math.random() * 100) + 1;
-    console.log(randNum)
-    attempts++
-    if (randNum % 5 === 0) isDone = true 
-}
+do {
+    randNum = Math.floor((Math.random() * 100) + 1);
+    attempts++;
+} while( randNum % 5 !== 0) // if the condition is true it will go again This says if it is not a raminder of five the loop will go again
+
+
 
 console.log(`The number is ${randNum} is and it took ${attempts} times`);
 
@@ -65,45 +68,42 @@ console.log(`The number is ${randNum} is and it took ${attempts} times`);
 
 
 let arr = ['Germany', 'Argentina', 'Ukraine', 'Romania'];
-let sortedArr = arr.sort((a,b) => {
-    return a.localeCompare(b)
-})
+
 console.log(arr);
-console.log(sortedArr);
+console.log(arr.sort()); // sort will alphabetize
 
 
 // TASK 9 
 let characters = ['Scooby Doo', 'Snoopy', 'Blue', 'Pluto', 'Dino', 'Sparky'];
-let hasPluto = false;
-console.log(characters);
+console.log(characters.includes('Pluto')); // this medthod returns a boolean 
 
-for(const character of characters) {
-    if(character === 'Pluto') hasPluto = true;
-}
 
-// Another Solution
-// hasPluto = characters.includes("Pluto")
-
-console.log(hasPluto);
 
 // TASK 10 
 
 let cartoons = ['Garfield', 'Tom', 'Sylvester', 'Azrael'];
+console.log(cartoons);
+console.log(cartoons.sort()); // [ 'Azrael', 'Garfield', 'Sylvester', 'Tom' ]
+console.log(cartoons.includes('Garfield' && 'Felix')); // false
 
-// TASK 11 
+// TASK 11 USE FOR OF LOOP TO LOOP THROUGH EVERY INDEX OF AN ARRAY
 let numbers = [10.5, 20.75, 70, 80, 15.75];
 
 console.log(numbers);
 
-// for (const number of numbers) {
-//     console.log(number);
-// }
-
+for(const number of numbers) {
+    console.log(number);
+}
 
 // second method
-// for (let i = 0; i<numbers.length; i++){
-//     console.log(numbers[i])
-// }
+for (let i = 0; i < numbers.length; i++){ // numbers.length is equal to five in this case
+    console.log(numbers[i]);
+ }
+
+ // third method
+ numbers.forEach(function(number) {
+    console.log(number);
+ })
 
 
 // TASK 12
@@ -129,14 +129,22 @@ console.log(countPartial);
 
 let numbArr = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78]
 
-let numbsGreaterThanTen = 0
-let numbsEqualToTen = 0
-let numbsLessThanTen = 0
+let numbsGreaterThanTen = 0;
+let numbsEqualToTen = 0;
+let numbsLessThanTen = 0;
 
 for (number of numbArr ) {
     if (number > 10) numbsGreaterThanTen++;
-    if (number === 10) numbsEqualToTen++;
-    if (number < 10) numbsLessThanTen++;
+    else if (number < 10) numbsLessThanTen++;
+    else numbsEqualToTen++; // DO NOT NEED TO WRITE OUT THIS CONDITION (number === 10) not really needed better code
+}
+
+// For each solution
+numbArr.forEach(function(number) {
+    if (number > 10) numbsGreaterThanTen++;
+    else if (number < 10) numbsLessThanTen++;
+    else numbsEqualToTen++;
+
 }
 
 console.log(numbArr);
@@ -146,14 +154,14 @@ console.log(numbsLessThanTen);
 
 // TASK 14
 
-array1 = [ 5, 8, 13, 1, 2 ]
-array2 = [ 9, 3, 67, 1, 0 ]
-array3 =[];
+let array1 = [ 5, 8, 13, 1, 2 ]
+let array2 = [ 9, 3, 67, 1, 0 ]
+let array3 =[];
 console.log(array1);
 console.log(array2);
 
-for(let i = 0; i <= array1.length - 1; i++) {
-    array3.push(Math.max(array1[i], array2[i]));
+for(let i = 0; i < array1.length; i++) {
+    array3.push(Math.max(array1[i], array2[i])); // push adds to the array
 }
 console.log(array3);
 
@@ -163,29 +171,20 @@ NOTE: Make your code dynamic that works for any array and return -1 if there are
 value and data types of the elements must be same. */
 
 function firstDuplicate(arr) {                                      // created a function and took array as an argument
-    let firstDup;
-    let noDup = -1                                                  // initialized for no variable in array
     for(let i = 0; i < arr.length; i++){                            // created for loop 
-        for(let j = 1; j < arr.length; j++) {                       // this second for loop compares each element for a duplicate
-            if (arr[j] === arr[i]) {                                // checks for strict equality 
-                firstDup = arr[i];                                  // assigning firstDup witih a value of arr[i]
-                return firstDup;
-                break;
+        for(let j = i + 1; j < arr.length; j++) {                   // this second for loop compares each element for a duplicate but have to start with i + 1
+            if (arr[j] === arr[i]) { return arr[i];                 // checks for strict equality 
             }
         }   
     } 
-    return noDup; 
-    
+    return -1;    
 }
 console.log(firstDuplicate([ 3, 7, 10, 0, 3, 10 ])); 
-
-
-firstDuplicate([ 3, 7, 10, 0, 3, 10 ]);
-firstDuplicate([ 5, 7, 7, 0, 5, 10 ]);
-firstDuplicate([ 5, '5', 3, 7, 4 ]);
-firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]);
-firstDuplicate([ 1, 2, 3]);
-firstDuplicate([ 'foo', 'abc', '123', 'bar']);
+console.log(firstDuplicate([ 5, 7, 7, 0, 5, 10 ]));
+console.log(firstDuplicate([ 5, '5', 3, 7, 4 ]));
+console.log(firstDuplicate([ 123, 'abc', '123', 3, 'abc' ]));
+console.log(firstDuplicate([ 1, 2, 3]));
+console.log(firstDuplicate([ 'foo', 'abc', '123', 'bar']));
 
 
 
@@ -196,22 +195,42 @@ firstDuplicate([ 'foo', 'abc', '123', 'bar']);
 
 function getDuplicates(array) {
     let allDups = [];
-    for(let i = 0; i <= array.length-1; i++){
-        for(let j =  i + 1; j <= array.length-1; j++) {
-            if(array[j] === array[i]) {
-                if(!allDups.includes(array[j])) {
-                    allDups.push(array[j])
-            } 
+    for(let i = 0; i < array.length; i++){
+        for(let j =  i + 1; j < array.length; j++) {
+            if(array[j] === array[i] && !allDups.includes(array[i])) allDups.push(array[i])
+        } 
         
-        }   
-    }
-   
-} 
-return allDups;
+     }   
+    
+        return allDups;
 }
 
+// second solution
+function getDuplicates(array){
+    let container = [];
+    let allDuplicates = [];
+
+    for(let obj of array) {
+        if(container.includes(obj) && !allDuplicates.includes(obj)) allDuplicates.push(obj)
+        else(container.push(obj))
+    }
+    return allDuplicates;
+}
 
 console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]));
+
+
+// TASK 17
+
+function reverseStringWords(string) {
+    let stringArr = string.trim().split(' '); // this will trim any spaces from the front and back each word individually
+    for(let i = 0; i < stringArr.length; i++){
+       stringArr[i] = stringArr[i].split('').reverse().join('')
+} 
+return stringArr.join(' ');
+}
+
+console.log(reverseStringWords('Hello World'));
 
 // TASK 18
 //Write a function named as getEvens() which takes 2 number arguments and returns all the even numbers as an array stored from smallest even number to greatest even number when invoked.
@@ -221,13 +240,11 @@ console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]));
 function getEvens(x,y) {
     let start = Math.min(x,y);
     let end = Math.max(x,y);
-    let noEven = [];
+    let even = [];
     for(i = start; i <= end; i++ ) {
-    if(i % 2 === 0) {
-        noEven.push(i);
-    }
-}
-    return noEven;
+    if(i % 2 === 0) even.push(i);
+    };
+    return even;
 }
 console.log(getEvens(2, 7)); //	-> [ 2, 4, 6 ]
 console.log(getEvens(17, 5));	// -> [ 6, 8, 10, 12, 14, 16 ]
@@ -243,9 +260,7 @@ Assume you will not be given negative numbers. */
 function getMultipleOf5(num1,num2) {
     const Divisible5 =[];
       for(let i =Math.max(num1,num2); i>= Math.min(num1,num2); i--) {
-        if(i % 5 === 0) {
-            Divisible5.push(i);
-        }
+        if(i % 5 === 0) Divisible5.push(i);
       }
         return Divisible5;
 }
