@@ -4,7 +4,7 @@ countPos([-45, 0, 0, 34, 5, 67]) 	-> 3
 countPos([-23, -4, 0, 2, 5, 90, 123]) 	-> 4
 countPos([0, -1, -2, -3]) 		-> 0 */
 
-function countPos(array) {
+const countPos = (array) => {
     let countE = 0;
     for(let numbers of array){
         if(numbers > 0) {
@@ -15,8 +15,18 @@ function countPos(array) {
     return countE;
 } 
 console.log(countPos(([-45, 0, 0, 34, 5, 67]))); // 3 
+console.log(countPos([-23, -4, 0, 2, 5, 90, 123])); // 4 
+console.log(countPos([0, -1, -2, -3])); // 0 
 
-/* Write a function named countA() which takes a string argument and returns how many A or a there are in the given string when invoked.
+//FILTER METHOD
+const countPos2 = (arr) => arr.filter(num => num > 0).length // can use FILTER method; give a variable name and set its condition
+
+console.log(countPos2(([-45, 0, 0, 34, 5, 67]))); // 3 
+console.log(countPos2([-23, -4, 0, 2, 5, 90, 123])); // 4 
+console.log(countPos2([0, -1, -2, -3])); // 0 
+
+/* Write a function named countA() which takes a string argument and 
+returns how many A or a there are in the given string when invoked.
 
 NOTE: Ignore case sensitivity. 
 
@@ -28,20 +38,20 @@ countA("Cypress") 			-> 0
 
 
 
-function countA(string) {
+const countA = (string) => {
     let countLetterA = 0;
+    
     for (const letter of string) {
-        if(letter.toLowerCase() === 'a') {
-            countLetterA++;
-        }
+        if(letter.toLowerCase() === 'a') countLetterA++;
 
     }
     return countLetterA;
 }
+const countA2 = (str) => str.split('').filter(letter => letter.toLowerCase() === 'a').length
 
-console.log(countA("TechGlobal is a QA bootcamp")); // 4
-console.log(countA("QA stands for Quality Assurance")); // 5
-console.log(countA("Cypress"));	// 0
+console.log(countA2("TechGlobal is a QA bootcamp")); // 4
+console.log(countA2("QA stands for Quality Assurance")); // 5
+console.log(countA2("Cypress"));	// 0
 
 // Task 3
 /* Write a function named as countVowels() which takes a string word as an argument and returns the count of the vowel letters when invoked.
@@ -54,12 +64,13 @@ countVowels("JavaScript is fun") 		-> 5
 countVowels("") 			-> 0
 */
 
-function countVowels(string) {
+const countVowels = (string) => {
     let countV = 0;
+    const vowels = ['a','e', 'i', 'o', 'u'];
+
     for(let letter of string) {
-        if('aeiou'.includes(letter.toLowerCase())) {
-        countV++;
-        }
+        if(vowels.includes(letter.toLowerCase())) countV++;
+
     }
     return countV;
 }
@@ -78,10 +89,10 @@ countConsonants("") 			-> 0
 
 function countConsonants(string) {
     let countC = 0;
-    for(let letters of string) {
-        if(!'aeiou'.includes(letters.toLowerCase())){
-        countC++;
-        }
+    const vowels = ['a','e', 'i', 'o', 'u'];
+    
+    for(letters of string) {
+        if(!(vowels.includes(letters.toLowerCase()))) countC++
     }
     return countC;
 }
@@ -99,14 +110,15 @@ NOTE: Be careful about the extra whitespaces before and after the string.
 countWords("     Javascript is fun       ") 		-> 3
 countWords("Cypress is an UI automation tool.    ") 	-> 6 countWords("1 2 3 4") 	*/
 
-function countWords(string) {
-    for(let word of string) {
-        return(word.trim().word.length);
-        
-    }
+
+const countWords = (str) => {
+    return str.trim().split(' ').length
 }
-console.log(countWords("     Javascript is fun       ")); //		-> 3
-console.log(countWords("Cypress is an UI automation tool."));
+
+
+console.log(countWords("    Javascript is fun       ")); //		-> 3
+console.log(countWords("Cypress is an UI automation tool.")); // 6
+console.log(countWords("1 2 3 4")); // 4
 
 //TASK 6 
 /* Write a function named as factorial() which takes a number as an argument and returns the factorial of the number when invoked.
@@ -122,7 +134,7 @@ factorial(0)		-> 1
 factorial(1)		-> 
 */
 
-function factorial(number) {
+const factorial = (number) => {
     let factorial = 1;
     for(i = 1; i <= number; i++) {
     factorial *= i;
@@ -135,7 +147,8 @@ console.log(factorial(4));
 console.log(factorial(0));
 console.log(factorial(1));
 
-/* Write a function named as isPalindrome() which takes a string word as an argument and returns true if the word is palindrome or returns false otherwise when invoked.
+/* Write a function named as isPalindrome() which takes a string word as an 
+argument and returns true if the word is palindrome or returns false otherwise when invoked.
 
 NOTE: Palindrome: It is a word that is read the same backward as forward
 Examples: kayak, civic, madam
@@ -154,11 +167,8 @@ isPalindrome("A") 		-> true
 isPalindrome("") 		-> true 
 */
 
-function isPalindrome(string) {
-    let string2 = string.toLowerCase();
-    string2 = string2.split("").reverse().join("");
-    return string2 === string.toLowerCase();
-}
+const isPalindrome = (string) => string.toLowerCase() === string.toLowerCase().split("").reverse().join("");
+    
 
 console.log(isPalindrome("Hello")); 
 console.log(isPalindrome("Kayak"));
@@ -184,18 +194,24 @@ countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) // 	-> 4
 countMultipleWords([ ]) 					// -> 0
 
 
-/* TASK 9 Write a function named as count3OrLess() which takes a string word as an argument and returns 
+/* TASK 9 Write a function named as count3OrLess() which 
+takes a string word as an argument and returns 
 the count of the words that has 3 characters or less when invoked. */
 
 
 function count3OrLess(string) {
-    let words = string.split(' ');
-    const shortWords = words.filter(words => words.length <= 3);
-    return shortWords.length
+    let count = 0;
 
+    const strArr = string.trim().split(' ');
+
+    strArr.forEach(word => {
+        if(word.length > 0 && word.lenght <= 3) count++
+    })
+    return count
+ 
 }
 
-const count3OrLess = (sentence) => sentence.split(' ').filter(word => word.length <= 3).length;
+const count3OrLess = (sentence) => sentence.trim().split(' ').filter(word => word.length > 0 && word.length <= 3).length;
 
 
 console.log(count3OrLess("Hello")) // 			-> 0
@@ -204,14 +220,15 @@ console.log(count3OrLess("JavaScript is fun")) //		-> 2
 console.log(count3OrLess("My name is John Doe"))  //	-> 3
 console.log(count3OrLess("")) //			-> 0
 
-/* Task 10 Write a function named as isPrime() which takes a number as an argument and returns true if the number is prime or 
+/* Task 10 Write a function named as isPrime() which takes a number as an
+ argument and returns true if the number is prime or 
 returns false otherwise when invoked.
 
 NOTE: Mathematically, Prime number is a number that can be divided only by itself and 1. It cannot be divided by any other number. The smallest prime number is 2 and 2 is the only even prime number.
 Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…
 NOTE: The smallest prime number is 2 and there is no negative prime numbers. */
 
-function isPrime(number) {
+const isPrime = (number) => {
     if (number < 2) return false;
     else if(number % number === 0 && number % 1 === 0) return true;
     
@@ -222,7 +239,7 @@ console.log(isPrime(2)) //		-> true
 console.log(isPrime(29))//		-> true
 console.log(isPrime(-5)) //		-> false
 console.log(isPrime(0))	//	-> false
-console.log(isPrime(1)) 
+console.log(isPrime(4)) 
 
 // TASK 11
 // Write a function named add() which takes two array of numbers as argument and returns a new array with sum of given arrays elements.
