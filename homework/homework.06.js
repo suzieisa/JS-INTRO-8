@@ -1,4 +1,5 @@
-/* Task 01 Write a function named noSpace() which takes a string as argument and returns a new string with all the spaces removed.
+/* Task 01 Write a function named noSpace() which takes a string as 
+argument and returns a new string with all the spaces removed.
 Examples:
 noSpace("") 			->  ""
 noSpace("Javascript") 		->  "Javascript"
@@ -7,6 +8,11 @@ noSpace(" Hello World   ") 	-> "HelloWorld”
 noSpace("Tech Global") 		-> "TechGlobal" 
 */
 
+// can do it with filter 
+// const noSpace = str => str.split('').filter(c => c !== " ").join('')
+
+// when you split by (' ') it removes every space in the string (example : ['Tech', 'Global']
+// join will bring back together without spaces 
 const noSpace = (string) => string.split(" ").join("");
 
 console.log(noSpace("")); // ->  ""
@@ -28,14 +34,21 @@ replaceFirstLast("A") 		-> ""
 replaceFirstLast("    A      ") 	-> ""
 */
 
+// to switch the first and last characters you can slice 
+
 const replaceFirstLast = (str) => {
-  const string = str.trim();
-  if (string.length < 2) return "";
-  const first = string[0];
-  const last = string[string.length - 1];
-  const middle = string.slice(1, string.length - 1);
+  str = str.trim();                      
+  
+  if (str.length < 2) return ""; 
+
+  const first = str[0];
+  const last = str[str.length - 1];
+  const middle = str.slice(1, str.length - 1); // slice takes from the first index and the last ending point
+  
   return last + middle + first;
 };
+
+
 
 console.log(replaceFirstLast("")); // 		->  ""
 console.log(replaceFirstLast("Hello")); // 		->  "oellH"
@@ -55,7 +68,7 @@ hasVowel("1234") 		-> false
 hasVowel("ABC") 		-> true
 */
 
-const hasVowel = (string1) => {
+// const hasVowel = (string1) => {
   const vowels = ["a", "e", "i", "o", "u"];
   const stringArray = string1.toLowerCase().split("");
   let result = false;
@@ -66,6 +79,8 @@ const hasVowel = (string1) => {
   });
   return result;
 };
+// filter works with array 
+const hasVowel = (string) => string.toLowerCase().split('').filter(c => ["a", "e", "i", "o", "u"].includes(c)).length > 0;
 
 console.log(hasVowel("")); // 		-> false
 console.log(hasVowel("Javascript")); //		-> true
