@@ -22,11 +22,19 @@ const hasUpperCase = (string) => {
 
 }
 
+const hasUpperCase2 = (str) => str.split('').filter(i =>  i >= 'A' && i <= 'Z').length > 0
 
-console.log(hasUpperCase("javascript"));  //	-> false
-console.log(hasUpperCase("John")); //		-> true
-console.log(hasUpperCase("$125.0")); //	-> false
-console.log(hasUpperCase(""));	//	-> false
+
+// split by empty character and filter out each letter
+// if length is more than 0 
+// JS is smart enough to know 'A' to 'Z' is referred to ASCII TABLE
+// basically checks if it falls between uppercase a & z 
+// filter works by taking an index (i)
+
+console.log(hasUpperCase2("javascript"));  //	-> false
+console.log(hasUpperCase2("John")); //		-> true
+console.log(hasUpperCase2("$125.0")); //	-> false
+console.log(hasUpperCase2(""));	//	-> false
 
 /* TASK 2 
 Write a function named noDigit() which takes a string argument and 
@@ -62,11 +70,14 @@ const noDigit = (string) => {
     return stringArr.join('');
 }
 
-console.log(noDigit("")); //			-> ""
-console.log(noDigit("Javascript")); //		-> "Javascript"
-console.log(noDigit("123Hello")); //		-> "Hello"
-console.log(noDigit("123Hello World149")); // 	-> "Hello World”
-console.log(noDigit("123Tech456Global149")) //	-> "TechGlobal"
+const noDigit3 = (str) => str.split('').filter(i => i < '0' || i > '9').join('').
+
+
+console.log(noDigit3("")); //			-> ""
+console.log(noDigit3("Javascript")); //		-> "Javascript"
+console.log(noDigit3("123Hello")); //		-> "Hello"
+console.log(noDigit3("123Hello World149")); // 	-> "Hello World”
+console.log(noDigit3("123Tech456Global149")) //	-> "TechGlobal"
 
 
 /* Task 3 
@@ -91,11 +102,16 @@ const noVowel = (string) => {
     }) 
     return stringArr.join('')
 }
-console.log(noVowel("TechGlobal")) //	-> "TchGlbl"
-console.log(noVowel("AEOxyz")); //	-> "xyz"
-console.log(noVowel("Javascript")) //	-> "Jvscrpt"
-console.log(noVowel("")) // -> ""
-console.log(noVowel("125$")); //	-> "125$"
+
+
+const noVowel2 = (string) => string.split('').filter(i => !('aeiou'.includes(i.toLowerCase()))).join('')
+
+
+console.log(noVowel2("TechGlobal")) //	-> "TchGlbl"
+console.log(noVowel2("AEOxyz")); //	-> "xyz"
+console.log(noVowel2("Javascript")) //	-> "Jvscrpt"
+console.log(noVowel2("")) // -> ""
+console.log(noVowel2("125$")); //	-> "125$"
 
 // TASK 4 Write a function named no13() which takes an array of numbers as 
 // argument and return a new array with all 13s replaced with 0s. ​
@@ -107,6 +123,7 @@ const no13 = (numArr) => {
 
 }
 
+// 
 console.log(no13([1, 2, 3 ,4])) //		-> [1, 2, 3 ,4] 
 console.log(no13([13, 2, 3])) //		-> [0, 2, 3]
 console.log(no13([13, 13, 13 , 13, 13])) //	-> [0, 0, 0, 0, 0]
@@ -119,9 +136,8 @@ console.log(no13([])) //			-> []
 const middleInt = (x, y, z) => {
     // sort numbers 
     // return the middle number
-    return [x, y, z].sort()[1]
+    return [x, y, z].sort((a,b) => a-b)[1]
 }
-
 
 console.log(middleInt(1, 2, 2))// 	-> 2
 console.log(middleInt(5, 5, 8))// 	-> 5
@@ -140,11 +156,18 @@ const sumOfDigits = (string) => {
 
 }
 
+const sumOfDigits2 = (string) => string.split('').filter(i => i >= '0' && i <= '9').reduce((sum, num) => sum += Number(num) , 0)
 
-console.log(sumOfDigits("Javascript"))// 	-> 0
-console.log(sumOfDigits("John’s age is 29"))// 	-> 11
-console.log(sumOfDigits("$125.0"))// 		-> 8
-console.log(sumOfDigits(""))// 		-> 0
+// first split string into an array
+// filter out all letters by using numbers 0-9
+/// reduce takes a sum and the num refers to each element in the array
+// since num is a string we need to convert to a number parseInt or Number can be used, 
+// sum starts with 0 
+
+console.log(sumOfDigits2("Javascript"))// 	-> 0
+console.log(sumOfDigits2("John’s age is 29"))// 	-> 11
+console.log(sumOfDigits2("$125.0"))// 		-> 8
+console.log(sumOfDigits2(""))// 		-> 0
 
 
 // TASK 7 Write a function named arrFactorial() which takes an array of 
