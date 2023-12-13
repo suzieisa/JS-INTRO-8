@@ -39,7 +39,7 @@ replaceFirstLast("    A      ") 	-> ""
 const replaceFirstLast = (str) => {
   str = str.trim();                      
   
-  if (str.length < 2) return ""; 
+  if(str.length < 2) return ""; 
 
   const first = str[0];
   const last = str[str.length - 1];
@@ -48,13 +48,35 @@ const replaceFirstLast = (str) => {
   return last + middle + first;
 };
 
+// //str[str.length - 1]:
+// This expression directly retrieves the last character of the string. It gives you the actual letter at the last position.
 
+// str.length - 1:
+// This expression calculates the index of the last character in the string. It gives you a number, specifically the index where the last character is located.
+
+
+// TERNARY WAY 
+// const replaceFirstLast = (str) => {
+//   str = str.trim()
+//   return str.length < 2 ? "" : str[str.length - 1] + str.slice(1, str.length - 1) + str[0];
+// }
 
 console.log(replaceFirstLast("")); // 		->  ""
 console.log(replaceFirstLast("Hello")); // 		->  "oellH"
 console.log(replaceFirstLast("Tech Global")); // 	-> "lech GlobaT"
 console.log(replaceFirstLast("A")); // 		-> ""
 console.log(replaceFirstLast("    A      ")); // 	-> ""
+
+
+
+
+
+
+
+
+
+
+
 
 /* Task 3 Write a function named hasVowel() which takes a string argument and returns true if the string has a vowel, returns false if the string doesn’t contain any vowel letter.
 

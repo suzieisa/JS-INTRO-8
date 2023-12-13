@@ -233,7 +233,8 @@ return stringArr.join(' ');
 console.log(reverseStringWords('Hello World'));
 
 // TASK 18
-//Write a function named as getEvens() which takes 2 number arguments and returns all the even numbers as an array stored from smallest even number to greatest even number when invoked.
+//Write a function named as getEvens() which takes 2 number arguments and returns all 
+//the even numbers as an array stored from smallest even number to greatest even number when invoked.
 // NOTE: Make your code dynamic that works for any numbers and return empty array if there are no even numbers in the range of given 2 numbers. 
 
 
