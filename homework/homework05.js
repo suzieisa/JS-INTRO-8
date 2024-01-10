@@ -179,19 +179,17 @@ console.log(isPalindrome("Kayak"));
 function countMultipleWords(array) {
     let countMultipleWords = 0;
 
-     for(const words of array) {                                                                    
-        let word = words.trim()
-        let newArray = word.split(" ")
-        if(newArray.length > 1) countMultipleWords++;
+     for(const words of array) {                                                                   
+        if(words.trim().split(' ').length > 1) countMultipleWords++;
 
      }
      return countMultipleWords;
 }
 
 console.log(countMultipleWords([ "foo", "", "    ", "foo bar", "     foo" ])); //		-> 1
-countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ]) 		// -> 0
-countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ]) // 	-> 4
-countMultipleWords([ ]) 					// -> 0
+console.log(countMultipleWords([ "foo", "bar", "foobar", "     foobar   " ])) 		// -> 0
+console.log(countMultipleWords([ "f o o", "b a r", "foo bar", "     foo bar   " ])) // 	-> 4
+console.log(countMultipleWords([ ])) 					// -> 0
 
 
 /* TASK 9 Write a function named as count3OrLess() which 
