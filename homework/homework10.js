@@ -6,24 +6,21 @@
 // 1 Mango is $4.99
 // 1 Pineapple $5.25
 
-function calculateTotalPrice1(items) {
-  const prices = {
-    Apple: 2.0,
-    Orange: 3.29,
-    Mango: 4.99,
-    Pineapple: 5.25,
+const calculateTotalPrice1 = (items) => {
+  const menu = {
+    apple: 2.0,
+    orange: 3.29,
+    mango: 4.99,
+    pineapple: 5.25,
   };
 
-  let totalPrice = 0;
+  let total = 0;
 
-  for (const itemName in items) {
-    if (prices[itemName]) {
-      totalPrice += prices[itemName] * items[itemName];
-    }
+  for (const item in items) {
+    total += menu[item] * items[item];
   }
-
-  return totalPrice.toFixed(2);
-}
+  return total;
+};
 
 console.log(calculateTotalPrice1({ apple: 3, mango: 1 })); // -> 10.99
 console.log(calculateTotalPrice1({ apple: 2, pineapple: 1, orange: 3 })); // -> 19.12
@@ -85,9 +82,9 @@ console.log(calculateTotalPrice1({ Apple: 4, Pineapple: 1, Orange: 1, Mango }));
 // TASK 3 Write a function named nthWord() which takes a string and a number arguments and returns the nth word in the string.
 // Note: Function should return empty string if the number argument is greater than the count of the words in the given string.
 
-const nthWord = (string, n) => {
-  const words = string.split(" ");
-  return n >= 1 && n <= words.length ? words[n - 1] : "";
+const nthWord = (str, num) => {
+  const words = str.split(" ");
+  return num >= 1 && num <= words.length ? words[num - 1] : "";
 };
 
 console.log(nthWord("I like programming languages", 2)); // 	-> "like"
@@ -107,7 +104,15 @@ console.log(nthWord("", 1)); // 			-> ""
 // 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153​
 // In this case, the sum of the individual digits raised to the power of 3 (the number of digits in 153) is equal to the original number, which means 153 is an armstrong number.
 
-const isArmstrong = (number) => {};
+const isArmstrong = (num) => {
+  let numAsStr = num.toFixed();
+
+  let armstrong = numAsStr
+    .split("")
+    .reduce((total, i) => total + Math.pow(i, numAsStr.length), 0);
+
+  return armstrong === num;
+};
 
 console.log(isArmstrong(153)); // 	-> true
 console.log(isArmstrong(123)); // 	-> false
@@ -131,8 +136,8 @@ console.log(reverseNumber(111)); // 	-> 111
 //numbers as argument and a boolean value.
 //It will return the array elements doubled if true or tripled if the boolean value is false.​
 
-const doubleOrTriple = (numbers, isDouble) =>
-  numbers.map((number) => (isDouble ? number * 2 : number * 3));
+const doubleOrTriple = (array, isDouble) =>
+  isDouble ? array.map((i) => i * 2) : array.map((i) => i * 3);
 
 console.log(doubleOrTriple([1, 5, 10], true)); // 	-> [2, 10, 20]
 console.log(doubleOrTriple([3, 7, 2], false)); // 	-> [9, 21, 6]
