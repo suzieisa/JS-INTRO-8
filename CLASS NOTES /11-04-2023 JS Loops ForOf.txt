@@ -1,0 +1,42 @@
+RECAP:
+
+-LOOPS are common concecpts in any programming language and widely used.
+-It eliminates duplicated codes and allows programmer to run a block of code repeatedly
+-It saves time and effort for the programmer as well.
+
+1. for loop (i loop) (tradional loop) 
+2. while loop (Takes one condition)
+3. do while loop
+4. for...of loop (mostly used with arrays)
+5. for...in loop (mostly used with objects)
+
+for(start; condition; update) {
+    // code block 
+}
+//////////////////////////////////
+while(condition) {
+    // code block
+}
+//////////////////////////////////
+do {
+    // cocde block
+} while(condition);
+
+while vs do-while
+- ** The only difference bt these is that the do-while executes the code first and then 
+checks the condition. On the other hand, while checks the condition first and then executes the block of code
+
+NOTE: Above difference tells us. the do while will always execute the block of code at least 
+once even though the condition is right away false
+
+4. for...of loop
+-It is syntatic sugar added to your loop
+-for...of loop makes it easier for programmer to work with arrays or all other iterable objects
+
+
+WHEN TO USE for loop over for of loop with arrays?
+-If you need to chech each element and manipulate them, then for of loop will be preferred.
+-If you need to skip and ignore some parts of the array elements and need indexes than use  for loops
+
+NOTE: zero is not affecting the results when you find sum of multiplication while 1 is not affecting 
+

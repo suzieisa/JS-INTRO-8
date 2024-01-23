@@ -1,0 +1,58 @@
+How to loop through array elements?
+-for loop
+-for...of loop
+
+const arr = [10, 20, 30];
+
+for(let i = 0; i <= arr.length-1; i++) {
+    // arr[i]
+}
+
+for(const element of arr) {
+    // element 
+}
+
+NOTE: We mostly use for...of loop in case we loop through array elements
+and mostly we use all array elements
+It might be more useful to prefer for loop in the case you need indexes of the elements
+for the given task.
+
+const arr1 = [2, 3, 4];
+const arr2 = [2 ,1, 2];
+
+divide the numbers from array1 with the numbers in array2 following the same indexes.
+[1, 3, 2]
+const arr3 =[];
+
+for(let i = 0; i <= arr1.length-1; i++) {
+   arr3.push(arr[i] / arr2[i]);
+}
+console.log(arr3);
+
+
+NESTED LOOPS:
+Any loop statement can be used in another loop.
+Executing a loop inside another loop is known as nested loops.
+The first loop is known as outer loop, and the second one which is used inside the first one is known as inner loop.
+NOTE: we will cover for in loop once we learn JS Objects as it is used with objects.
+
+Array forEach() higher order function : This is another way we can iterate through array elements
+
+higher order function?
+callback function?
+arrow function?
+
+JS Objects
+-It is a reference data type.
+-It consist of one or multiple key-value pair
+-Each key valu epair is known as properties
+-we can create objects using object literals {} or object constructed
+    const obj1 = {};
+    const obj2 = new object();
+
+5. for...in loop 
+- used to loop JS objects with their properties
+
+
+
+

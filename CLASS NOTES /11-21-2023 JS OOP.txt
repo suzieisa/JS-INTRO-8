@@ -1,0 +1,72 @@
+BEFORE ES6 
+-Creating PROTOTYPE with the helo of constructor
+-It is a special function (constructor function) that allows us to declare a PROTOTYPE
+which will eventually help us to create many similar objects from.
+-Constructor is always used together with the new keyword to create an object of thta prototype 
+-new keyword 
+Object - decide two things
+What the object has? -> Properties
+What the object does? -> Methods/Functions
+
+
+// Constructor function
+function Car(year, make, model, color, price) {
+    this. year= year; // 2023
+    this.make = make; // Tesla
+    this.color = color; 
+    this.price = price;
+}
+
+// Creating objects from the Car constructor / Car protoytpe 
+const car1 = new Car(2023, 'Tesla', 'X', 'White', 80000);
+const car2 = newCar(2023, 'BMW', X8, 'Black', 10000);  
+
+console.log(car2.color); // Black
+console.log(car1.model); //     X
+console.lof(car1.price); // 80000
+
+car1.drive();
+car2.drive()
+
+
+const car1 = {
+    year: 2023,
+    make: 'Tesla',
+    model: 'X',
+    color: 'White',
+    price : 80000
+};
+
+
+// Regular function
+function sum(x,y) {
+    // body to run a task 
+}
+
+sum(3,5);
+
+
+Car.prototype.drive = function() {
+    // block
+}
+
+
+
+// ES6 WAY : minor differnces
+
+class Car{
+    constructor(year, make, model, color, price){
+    this. year= year; 
+    this.make = make;
+    this.color = color; 
+    this.price = price;
+    }
+    drive() {
+        // body 
+    }
+}
+
+// Creating objects from the Car class using its constructor
+const car1 = new Car(2023, 'Tesla', 'X', 'White', 80000);
+const car2 = newCar(2023, 'BMW', X8, 'Black', 10000);  
+

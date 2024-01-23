@@ -1,0 +1,46 @@
+Aynchronous JavaScript
+
+-Happening at the same time
+-Without order
+-not synced
+
+HEAP vs STACK(Call Stack)
+-Call Stack stores all the primitive variables with their values
+-Call Stack stores references of objects
+-Heap stores all the reference objects
+-Functions are stored in the stack and will be executed 
+
+NOTE: Stack and Heap are created when a program starts and will be destoryed after
+each execution completes and will be ready for the next program
+
+-JS is single threaded and will execite code in a file line by line
+-It is not possible to run multiple program at the same time
+
+EVENT LOOP
+-The event loop allows Node.js to perform non-blocking I/O operations despite the fact that JavaScript is single-threaded. 
+-It is done by assigning operations to the operating system whenever and wherever possible. 
+-Most operating systems are multi-threaded and hence can handle multiple operations executing in the background. 
+-When one of these operations is completed, and the respective callback assigned to that operation is added to the event queue which will eventually be executed.
+
+Features of Event Loop:
+-An event loop is an endless loop, which waits for tasks, executes them, and then sleeps until it receives more tasks.
+-The event loop executes tasks from the event queue only when the call stack is empty i.e. there is no ongoing task.
+-The event loop allows us to use callbacks and promises.
+-The event loop executes the tasks starting from the oldest first.
+
+
+setTimeOut() -> we can use these functions to slow down our programs
+It takes 2 arguments;
+    1. call back
+    2. time as milliseconds
+    5000 milliseconds is 5 -> seconds
+
+JavaScript is Aynchronous by its nature and that could cause
+logical issues for the events on a web browser or on an application (unexpected order to delays)\
+However JS allows us to dy synchronize the events we would like to execute in order (ordered explicitly)
+    1. callbacks(BEFORE ES6)
+    2. promises (AFTER ES6)
+    3. async - await keywords (AFTER ES6)
+
+
+setTimeOut takes a call back function and telling it how much to wait out 

@@ -1,0 +1,160 @@
+
+RECAP: 
+
+Hoisiting : concept that allows you to functions and variables before they are declared with
+the var keyword only 
+
+Before ES6 -> var
+
+console.log(name);
+var name = 'Alex'
+
+
+var name;
+console.log(name); // undefined
+name = 'Alex'
+
+
+
+After ES6 -> let/const
+
+console.log(name); // Error- Reference
+
+let name = 'Alex';
+
+Functions created with regular tradtional way will be hoisted
+funcA(); // Allowed
+
+function funcA() {
+    // block
+}
+
+funcA(); // Allowed
+
+const funcB = function () {
+    // block 
+}
+
+const funcC = () => {
+    // block
+};
+
+
+
+Scope:
+Before ES6: Global Scope & Function Scope
+
+var name = 'John'; // Globally decalred variable can be used anywhere within the file 
+
+for(var i = 0; i < name.length; i++) {
+    console.log(name[i]);
+}
+
+if(name.startsWith('J')) {
+    console.log('Welcome to the J club ' + name);
+}
+else {
+    console.log('You cannot join the J club ' + name);
+}
+
+function upperName() {
+    name = name.toUpperCase();
+}
+upperName();
+
+console.log(name); // John
+
+
+Function Scope = Local Scope
+-Variables created within a function are local to there own scope.
+function getZeroOrOne() {
+    var randomNum = Math.floor(Math.random() * 2);
+    return randomNum;
+}
+
+console.log(randomNum); // Error-ReferenceError with all keywords you cannot access variable outside function
+
+
+After ES6: Block Scope and Lexical Scope 
+{
+    var x = 1;
+    let y = 2;
+    const z = 3;
+}
+
+console.log(x); // 1
+console.log(y); // Error - ReferenceError
+console.log(z); // Error - ReferenceError
+
+Lexical Scope : is related to nested functions and tells us that inner function can access the  
+outside function varaible, the outer funciton cannot access the inner function 
+
+const groups = [
+    ['Alex', 'John']'
+    ['Mary', 'Jane']
+];
+
+for(const group of groups) {
+    console.log(group); // Allowed
+    console.log(person); // Reference Error
+for(const person of group) {
+    console.log(group); // Allowed
+    console.log(person);
+    }
+}
+
+
+if( 2=== 2) {
+    let i = 10;
+    console.log(i + j); // Reference Error 
+
+    if(true) {
+        let j = 20;
+        console.log(i + j); // 30 
+    }
+}
+
+
+
+Closure: is a concept used to provide privacy to some variables by breaking the global access
+Most of the time, it is used with nested functions again. and you can create a variable in 
+the outer function and create an inner function that allows you to modify it
+
+function funA() {
+    let name = 'A';
+
+    function rename(str) {
+        name = str;
+    }
+    return rename; 
+}
+
+name = 'B'; // not allowed 
+
+const newFunction = funcA();
+
+const newName = newFunction('John');
+
+console.log(newName); // John 
+
+const newNewName = newFunction('Alex')
+console.log(newNewName); // Alex 
+
+Deprecated : a feature is not supported anymore.
+IE is depracted!
+
+
+
+
+ES6: 
+-let/const
+-arrow functions
+-string literal - backticks
+-includes()
+-for...of
+
+
+- Mutable - immutable
+call - apply - bind - currying
+Closure - Hoisiting - scope
+ES6 - rest/spread parameters, var-let-const, destructuring

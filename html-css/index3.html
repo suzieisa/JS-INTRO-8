@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form div {
+        padding: 10px;
+        margin: 0 10px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+
+    <!-- <form action="https://formsubmit.co/youremail@gmail.com" method="POST"> -->
+    <form>
+      <fieldset>
+        <legend>THIS IS SIMPLE FORM</legend>
+        <div>
+          <label for="fname">Your first name </label>
+          <input type="text" placeholder="First Name" id="fname" />
+        </div>
+
+        <div>
+          <label for="lname">Your last name </label>
+          <input type="text" placeholder="Last Name" id="lname" />
+        </div>
+
+        <div>
+          <label for="email">Your email</label>
+          <input type="email" placeholder="Email" id="email" />
+        </div>
+
+        <div>
+          <label for="password">Create password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Between 4-8 chars"
+            min="0"
+            max="9"
+            pattern="/^[1-9][0-9][0-9]$|^[1][0-9][0-9][0-9]$/"
+          />
+        </div>
+
+        <div>
+          <p>Are you joining?</p>
+          <label>
+            Yes
+            <input type="radio" name="question" value="yes" checked />
+          </label>
+          <label>
+            No
+            <input type="radio" name="question" value="no" />
+          </label>
+        </div>
+
+        <div>
+          <p>Choose colors you like</p>
+          <label for="blue">Blue</label>
+          <input type="checkbox" id="blue" />
+          <label for="orange">Orange</label>
+          <input type="checkbox" id="orange" />
+          <label for="green">Green</label>
+          <input type="checkbox" id="green" />
+        </div>
+
+        <div>
+          <span>Choose your country</span>
+          <select>
+            <option value="us">US</option>
+            <option value="canada">Canada</option>
+            <option value="japan">Japan</option>
+          </select>
+        </div>
+
+        <div>
+          <p>Any comments?</p>
+          <textarea
+            placeholder="Comment here ..."
+            rows="10"
+            cols="30"
+          ></textarea>
+        </div>
+        <!-- button -->
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

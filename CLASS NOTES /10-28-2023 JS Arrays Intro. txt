@@ -1,0 +1,39 @@
+Arrays Intro
+
+It is a reference type data used for storing similar -multiple data in a single variable
+
+
+How to create an array?
+1. using brackets notation [] known as array literal - MOSTLY PREFERRED
+ const array = []; // empty array
+const ar2 = [1,10,7]; // numbers array
+const arr3 = ['John, Alex']; string array
+
+2. using new array [] constructor.
+const arr4 = new Array(1,2,3); // number array 
+const arr5 = new Array(); // empty array 
+
+the typeof operator for array is object 
+console.log(typeof arr1); // object 
+console.log(typeof arr6); // object
+
+Array Indices- INDEXES
+Each array element is stored within an index starting from 0
+You can use the index to access updates, delete, manipulate data
+
+HOW TO CHECK THE LENGTH OF AN ARRAY?
+length property is used to check how many elements exist within an array
+console.log(arr5.length); // 
+
+to get the last element in an array
+length -1
+
+example: arr[arr.length -1];
+ 
+ 
+ **typically use const keyword with arrays
+
+
+
+
+

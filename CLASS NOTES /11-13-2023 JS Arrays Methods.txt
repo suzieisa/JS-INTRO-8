@@ -1,0 +1,29 @@
+
+
+function or method: they are useful and very common to usein any programmin lagnuage
+as they allow programmer to write a block of code once and execute it many times
+
+function name() {
+    // block to execute 
+}
+
+function expression: another way to define functions in Javascript and we actually
+create an annoymous function and assigning it to a variable
+
+const name = function () {
+    // block to execute
+};
+
+// Invoking a function
+name();
+
+Arrow function: New syntax of defining function in JS came with ES6 (ES2015);
+const hello = () => {
+    // block to execute
+};
+CALL BACK FUNCTION: it is a function used as an argument to another function
+
+forEach(callbackfunction)
+map(call back function)
+filter (call back function)
+reduce(call back function)

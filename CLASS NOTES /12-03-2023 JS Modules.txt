@@ -1,0 +1,144 @@
+12-03-2023 JS Modules
+
+Js Modules are used to increase code reusability within a framework.project as it allows creating reusable 
+components in a file and export it to be used by other files.
+Other files can import these reusable components and use.
+
+There are 2 ways to achieve this reusability.
+1. CommonJS (BEFORE ES6)
+    module.exports is used to export components (properties, functions, classes)
+    require is used to import reusable components in another file 
+
+2. ES6 Modules 
+    export 
+    import 
+
+fileA.js
+    // properties - information
+    const username = 'johndoeX';
+    const password = 'test1234';
+    const appURL = 'www.amazon.com';
+
+
+    // functions 
+    const login = (username, password) => {
+        // Login code
+    }
+
+
+
+
+fileB.js
+
+ Test 1:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can purchase product   
+
+
+fileC.js
+Test 2:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can see all the previous orders
+
+
+fileD.js
+Test 3:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can change your password
+
+
+fileE.js
+Test 4:
+ Go to amazon.com
+ Login with username and password 
+ Validate you can update your address
+
+
+
+HOW TO EXPORT properties and functions with CommonJS?
+WAY 1 - individual exports 
+module.exports.password = password;
+module.exports.username = username;
+module.exports.appURL = appURL;
+module.exports.login = login;
+
+
+WAY 2 - exporting as an object
+const loginInfo = {
+    username,
+    password,
+    appURL,
+    login
+};
+
+module.exports.loginInfo = loginInfo;
+
+
+WAY 2 - Improved
+module.exports.loginInfo = {
+    username,
+    password,
+    appURL,
+    login
+};
+
+
+HOW TO IMPORT properties and functions with CommonJS?
+WAY 1 - individual imports 
+const {password, username, appURL, login} = require('./fileA');
+
+console.log(username);
+console.log(password);
+login();
+
+WAY 2 - importing as an object
+const loginInfo = require('./fileA');
+
+console.log(loginInfo.username);
+console.log(loginInfo.password);
+console.log(loginInfo.appURL);
+loginInfo.login();
+
+
+ES6 Modules
+- It is added a little bit of syntatic sugar on previous common JS Modules
+-Looks more user friendly 
+-ES6 is uspported by new versions of Node and all modern browsers
+
+    export is used to export reusable components from a file
+    import...from ise used to import reusable components
+
+fileDriver.js
+// properties 
+const driverName = 'chrome'
+
+// functions 
+function quitDriver () {
+    // quitting driver
+}
+
+functions getDriver() {
+    // getting driver 
+}
+
+You can export a class as well.
+
+What is default export?
+-Default export is a feature used in ES6 Modules and 
+allows programmer to make one components as default
+-This component can eaily be accessed in other files.
+NOTE: There can only be ONE default in a file. 
+
+
+
+
+
+
+
+
+Java- import 
+C#- using
+

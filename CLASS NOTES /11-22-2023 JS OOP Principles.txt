@@ -1,0 +1,66 @@
+Object Oriented Programming
+
+C#, C++, Java
+
+Javascript is prototype- oriented programming language
+ES6 added classes and Javascript can also be used to achieve OOP.
+
+Before ES6:
+1. Create a prototype using constructor function 
+function Animal(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+}
+
+
+2. Add functions to your prototype
+Animal. prototype.eat = function () {
+
+}
+
+
+
+
+4. Create many object from its prototypeconst dog = new Animal('Fido', 3, 'Brown');
+
+// Aceess and execute the prototype properties and functions
+dog,anme; //
+dog.eat; //
+
+OOP Principles
+1. Encapsulation: breaking direct access to object properties/ fields/ states
+and providing and indirect access
+
+2. Inheritance : it is making the code more reusable as it allows
+inheriting parent classes or prototype to 
+
+3. Abstraction: providing functionality but hiding the implementation
+
+4. Polymorphism: one object being able to get many shapes
+
+Inheritance: increasing code reusability thru prototype chaining (BEFORE ES6), parent child
+relationship
+BEFORE ES6 : JS used to do inheritance with Object.create() or prototypal inheritance
+In these a child prototype object will be able to inherit from parent prototype object
+
+-> AFTER ES6: JS provides classes and inheritance like other OOP languages.
+You can inherit from parent class to child class with the 'extends' keyword
+
+RULES:
+-only child class can inherit from parent (same rule as before ES6)
+-A child class can inherit only from one direct parent class. (Chaining is still possible).
+- A parent class can be extended by many child classes.
+
+Constructor : is a special type of function used to create objects.
+
+
+ES6 class GETTERS and SETTERS
+GETTERS: are used to get properties of an object
+Getters: are mostly return type methds and usually they do not take argument unless necessary
+
+Setters: are used to set peoperties of an object
+Setters are mostly void type (not returning) and they mostly take
+
+
+

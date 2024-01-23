@@ -1,0 +1,54 @@
+
+
+
+
+
+EXPECTED === ACTUAL  -> PASS
+EXPECTED !== ACTUAL  -> FAILURE (BUG TICKETS)
+
+
+EXPECTED : Expected behavior of the application 
+-Custome expectation
+
+
+There are two ways to conduct Software Testing?
+
+1. Manual 
+-No need to learn programming langauges - coding
+
+2. Automation
+-Requires programming language knowledge and automation tools
+-Write a code that does exactly what Manual tester does
+
+
+10 - 15 yeard ago 
+10 Manual Testers = 40 - 50 k -> 400 - 500k
+
+20 - 1 hour
+200-300 -> 10 - 15 hours -> 2 days for one manula tester 
+
+Selenium - Playright - WebDriverIO - TestCase - ...
+
+
+2 automation testers - 1 Manual
+2000 -> 1800 automation
+200 manual 
+160k + 50k -> 210 k
+
+Automation is FASTER AND COST EFFECTIVE!!!!
+
+60 - 70K - Manual tester -> 40 - 100 k
+100 - 110 - Automation tester -> 80 - 200 k 
+
+
+
+ATLASSIAN has a suite of Software used by so many tech and other companies
+Confluence: Documentation tool
+Jira: Project managment tool
+Bitbucket: Exactly same tool like GitHub
+
+What is Cypress?
+Automation tool used to execute test cases automatically
+It automates web browsers.
+Web browsers : Chrome, Safari, Edge, 
+Web applciaton: https : // 

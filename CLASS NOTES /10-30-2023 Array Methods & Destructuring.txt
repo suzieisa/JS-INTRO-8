@@ -1,0 +1,63 @@
+
+
+- typeof operator for arrays returns object 
+
+How do you understand if a variable is an array? INTERVIEW QUESTION
+- You can use Array.isArray() method to check if a varabiable is actually an array
+- If this method returns true then the variable is an array, otherwise it will return false stating the variable is not an array
+
+12. Array.isArray() method
+- used to check if a variable is an array.
+- it takes an argument to be checked
+- it returns a boolean. It returns true or false depending if variable is actually an array or false otherwise
+- does not change original array
+
+13. sort() method
+- task is used to sort array elements
+    Strings: sorts alphabetically
+    Numbers: You may expect to sort from smaller to greater number but still alphabetically
+- it does not take any argument when you are sorting Strings, BUT we can have some argument to sort Numbers
+- it returns the original array back sorted
+- it modifies the original array
+
+SORTING NUMBERS with a comparison callback function
+
+callback function: is a function passed into another function as an argument
+
+const numbers = [1, 2, 5, 100, 21];
+numbers.sort((x,y) => x - y); // sorting ascending smaller - to bigger
+numbers.sort((x,y) => y- x); // sorting descending larger - smaller
+
+console.log(numbers); // [ 1, 2, 5, 21, 100 ]
+
+a               b                  a-b              information
+1               2                   -1              1 should be before 2
+2               5                   -3              2 should be before 5
+5               100                 -95             5 shoud be before 100
+100             21                  79              100 should be after 21 
+
+
+14. flat() method
+- reduces the dimension of nested arrays with their elements
+- if it is only one nested array, you dont need to but for more than one nested array
+you may use dimension
+- it returns a new array which flattened
+- does not change original array 
+
+15. toString() method
+- used to convert an array to a string
+- does not take any argument 
+- it returns a string
+- does not change array
+
+16. toJoin() method 
+- used to convert an array to a string
+- does not take any argument if you want a comma(default) however it does allow you to give a new seperator as a string argument
+- it returns a string
+- does not change array
+
+ARRAY DESTRUCTURING
+-DESTRUCTURING allows us to extract values from arrays, objects or other iterable data
+structures and assign them to variables in a more concise way
+
+iterable data = 

@@ -1,0 +1,26 @@
+
+
+infinite loops: loops that never stop because of logical mistake
+
+JS loops
+1. for loop
+2. while loop
+3. do -while loop
+4, for ...of loop (arrays)
+5. for... in loop (objects)
+
+1. for loop
+- We need to know that it takes 3 expression
+
+Syntax:
+for (initialization; condition; update) {
+    // block to be executed
+}
+
+infinite for loop
+for ( ; ;) {
+
+}
+for (let i = 0; i < 5; i --) {
+    
+}

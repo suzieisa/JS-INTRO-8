@@ -1,0 +1,11 @@
+
+
+Write you code in one file and use it in other files. Modules make
+this process easy
+
+
+There are 2 different types:
+1. CommonJS Modules(Before ES6)
+2. ES6 Modules
+
+

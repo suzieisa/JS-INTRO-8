@@ -1,0 +1,59 @@
+OOP: Object - oriented programming -> putting all the real life object into programmming
+
+Is Javascript OOP? No it is not
+-Before ES6 Javascript was not providing the classes that enables OOP
+-After ES6 , JS started to support OOP 
+
+OOP languages : JAVA, C#, C++, Kotlin
+
+Programmers still use JS without OOP
+
+
+
+Petshop
+
+const pet1 = {
+
+}
+
+
+Banking application: 
+Customer -> creditScore, salaray, 
+
+CheckingAccount
+
+const customer1 = {
+    name: 'Alex'
+
+    creditCards: [
+        card1: {
+            cardNumber: 1234,
+            exp_Date: 11/11,
+            name: 'Alex',
+            security_code:123
+        }
+    ]
+
+
+    checking: {
+        routingNo: 1234,
+        accountNo: 1234,
+        balance: 25.5
+    }
+    address: {
+
+    }
+}
+
+Car application - Carvana, cars.com, mercedes.com
+const carTesla1 = {
+    VIN: 123456947502493,
+    make:
+    model:
+    year:
+    price
+}
+
+
+
+

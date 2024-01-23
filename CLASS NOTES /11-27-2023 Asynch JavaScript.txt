@@ -1,0 +1,119 @@
+11-27-2023 Asynchronous JavaScript
+
+AJAX: 
+
+setTimeOut() is used for hard pause 
+
+Ways to handle asynchronous JavaScript code 
+1. Callbacks 
+2. Promises 
+3. Async Await 
+
+async keyword is used to define an asynchronous function
+await keyword is used to wait for an event till it completes, then it continues with the next
+event
+await keyword can only be used with the functions that return a promise 
+
+BEFORE ES6                          After ES6
+Callbacks                       Promises        Asynch-Await
+Do NOT use                        -70 %            -30 %
+
+
+80  minutes party
+- go to costco - 20 minutes
+- get meats and veggies - 15 minutes
+- cook - 30 minutes
+- serve - 10 minutes
+- eat - 5 minutes
+
+
+JS will execute based on order of less time 
+1. eat
+2. serve
+3. get meats and veggies
+4. go to costco
+5. then cook 
+
+function goToCostco() {
+        return new Promise(Resolve,reject) => {
+        setTimeOut(() => {
+            if(carDoesNotBreak) resolve();
+            else reject();
+        }, , 20000)
+    });
+}
+
+function getMeat() {
+       return new Promise(Resolve,reject) => {
+        setTimeOut(() => {
+            if(meatAvailable) resolve();
+            else reject();
+        }, , 15000)
+       })
+}
+
+function cook() {
+       return new Promise(Resolve,reject) => {
+        setTimeOut(() => {
+            if(noGas) resolve();
+            else reject();
+        }, , 30000)
+       })
+}
+
+function serve() {
+       return new Promise(Resolve,reject) => {
+        setTimeOut(() => {
+            if(noIssues) resolve();
+            else reject();
+        }, , 10000)
+       })
+}
+
+function eat() {
+       return new Promise(Resolve,reject) => {
+        setTimeOut(() => {
+            if(noProblem) resolve();
+            else reject();
+        }, , 50000)
+       });
+}
+
+// 
+function test() {
+    await goToCostco();
+    await getMeat();
+    await cook();
+    await serve();
+    await eat();
+} catch(err) {
+    console.log(err)
+}
+}
+
+test();
+
+// Write a similar code for daily or morning routine
+
+ERROR HANDLING
+error: unexpected result form a running program
+
+2 types of errors
+1. syntax error: this type of error because of the porgrammer
+2. runtim error: this type of error may happen due to a logical mistake 
+by programmer or system issue 
+
+try-catch-finally blocks 
+- We will use try for a block of code that could possibly throw an error 
+- catch block is used to catch if any error happens in the try block and customize the error
+- catch block will be executed ONLY if there is an error.
+- try cannot be used ALONE it needs require Catch, finally or both 
+- finally block is always executed in case of error or not. 
+
+throw keyword
+-this keyword is used to throw a custom error intentionally
+
+function giveMeAPositiveNumber(number) {
+    if(number > 0) console.log('Thanks!, number);
+    else throw new Error('Bad guy!!! Give positive number! ' 0);
+}
