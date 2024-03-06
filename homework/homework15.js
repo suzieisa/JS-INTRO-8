@@ -43,7 +43,7 @@ const alternatingCases = (string) => string.split('').filter(word => word !== ''
 
 
 
-console.log(alternatingCases("Hello")) // 	-> "HeLlO"
+console.log(alternatingCases("Hello")) // 	-> "HeLlO" 
 console.log(alternatingCases("basketball")) // 	-> "BaSkEtBaLl"
 console.log(alternatingCases("Tech Global")) // 	-> "TeCh GlObAl"
 console.log(alternatingCases("")) // 		-> ""
