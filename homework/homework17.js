@@ -59,6 +59,7 @@ const calculateGCD = (number1, number2) => {
 
     if (number2 === 0) {
         return number1;
+    
     } else {
        
         return calculateGCD(number2, number1 % number2);
@@ -82,11 +83,13 @@ console.log(calculateGCD(8, 12)) // 	-> 4
 
 
 const calculateLCM = (number1, number2) => {
-        const min = Math.min(number1, number2);                     
+        
+    const min = Math.min(number1, number2);                     
+        
         if(min === 0) return min;                       
     
         for(let i = 1; i <= (number1 * number2); i++){            
-            if(i % number1 === 0 && i % number2 === 0) return i;  
+        if(i % number1 === 0 && i % number2 === 0) return i;  
 }
 }
 
